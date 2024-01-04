@@ -22,6 +22,9 @@ dev_dependencies:
   mocktail: ^1.0.0
   very_good_analysis: ^5.1.0
 
+## Install derry from https://pub.dev/packages/derry and run derry launch dev|stg|prd, derry gen l10n, derry test coverage
+scripts: derry.yaml
+
 flutter:
   uses-material-design: true
   generate: true

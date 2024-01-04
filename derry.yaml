@@ -1,0 +1,50 @@
+launch:
+  # Development
+  dev: flutter run --flavor development --target lib/main_development.dart
+  # Staging
+  stg: flutter run --flavor staging --target lib/main_staging.dart
+  # Production
+  prd: flutter run --flavor production --target lib/main_production.dart
+
+build:
+  apk:
+    dev: flutter build apk --flavor development -t lib/main_development.dart
+    stg: flutter build apk --flavor staging -t lib/main_staging.dart
+    prd: flutter build apk --flavor production -t lib/main_production.dart
+  appbundle:
+    dev: flutter build appbundle --flavor development -t lib/main_development.dart
+    stg: flutter build appbundle --flavor staging -t lib/main_staging.dart
+    prd: flutter build appbundle --flavor production -t lib/main_production.dart
+  ios:
+    dev: flutter build ios --flavor development -t lib/main_development.dart
+    stg: flutter build ios --flavor staging -t lib/main_staging.dart
+    prd: flutter build ios --flavor production -t lib/main_production.dart
+  web:
+    dev: flutter build web -t lib/main_development.dart
+    stg: flutter build web -t lib/main_staging.dart
+    prd: flutter build web -t lib/main_production.dart
+
+gen:
+  l10n:
+    - flutter gen-l10n --arb-dir="lib/l10n/arb"
+
+clean:
+  - flutter clean
+  - flutter pub get
+
+test:
+  all: flutter test
+  exclude-goldens: flutter test --exclude-tags=golden
+  goldens: flutter test --tags=golden test/presentation/goldens
+  update-goldens: flutter test --tags=golden test/presentation/goldens --update-goldens
+  coverage: 
+    # To run all unit and widget tests
+    - flutter test --coverage --test-randomize-ordering-seed random
+    # Generate Coverage Report
+    - genhtml coverage/lcov.info -o coverage/
+    # Open Coverage Report
+    - open coverage/index.html
+
+analyze: flutter analyze --fatal-infos --fatal-warnings
+format: dart format --set-exit-if-changed lib
+fix: dart fix --apply

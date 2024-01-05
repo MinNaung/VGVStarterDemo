@@ -1,5 +1,6 @@
 # My Vgv Demo
 
+[![my_vgv_demo](https://github.com/MinNaung/VGVStarterDemo/actions/workflows/main.yaml/badge.svg)](https://github.com/MinNaung/VGVStarterDemo/actions/workflows/main.yaml)
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]

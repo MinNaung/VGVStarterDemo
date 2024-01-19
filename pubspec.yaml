@@ -19,7 +19,7 @@ dev_dependencies:
   bloc_test: ^9.1.4
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.0
+  mocktail: ^1.0.3
   very_good_analysis: ^5.1.0
 
 ## Install derry from https://pub.dev/packages/derry and run derry launch dev|stg|prd, derry gen l10n, derry test coverage
